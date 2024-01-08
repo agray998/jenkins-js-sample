@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        SECRET_TEXT = credentials("github_secret")
+    }
     stages {
         stage("install deps") {
             steps {
